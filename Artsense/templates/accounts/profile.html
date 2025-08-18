@@ -1,0 +1,10 @@
+<!-- templates/users/profile.html -->
+<h1>Welcome, {{ request.user.username }}!</h1>
+<p>Email: {{ request.user.email }}</p>
+<p>Gender: {{ request.user.get_gender_display }}</p>
+<p>Age: {{ request.user.age }}</p>
+
+<h3>Here’s a sample image:</h3>
+<img src="https://picsum.photos/500/300" alt="Art Image">
+
+<p><a href="/accounts/logout/">Logout</a></p>

@@ -1,0 +1,33 @@
+<!-- templates/users/signup.html -->
+<h2>📝 Sign Up</h2>
+
+<form method="post">
+    {% csrf_token %}
+    <p>
+        <label>Username:</label><br>
+        {{ form.username }}
+    </p>
+    <p>
+        <label>Email:</label><br>
+        {{ form.email }}
+    </p>
+    <p>
+        <label>Password:</label><br>
+        {{ form.password }}
+    </p>
+    <p>
+        <label>Confirm Password:</label><br>
+        {{ form.password_confirm }}
+    </p>
+    <p>
+        <label>Age:</label><br>
+        {{ form.age }}
+    </p>
+    <p>
+        <label>Gender:</label><br>
+        {{ form.gender }}
+    </p>
+    <button type="submit">Sign Up</button>
+</form>
+
+<p>Already have an account? <a href="/login/">Log in</a></p>
