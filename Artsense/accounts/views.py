@@ -14,7 +14,7 @@ def signup_view(request):
             return redirect('profile')  # Go to profile after signup
     else:
         form = SignUpForm()
-    return render(request, 'users/signup.html', {'form': form})
+    return render(request, 'accounts/sign_up.html', {'form': form})
 
 def login_view(request):
     error = None
@@ -27,7 +27,7 @@ def login_view(request):
             return redirect('profile')
         else:
             error = "Invalid username or password"
-    return render(request, 'users/login.html', {'error': error})
+    return render(request, 'accounts/login.html', {'error': error})
 
 def profile_view(request):
-    return render(request, 'users/profile.html')
+    return render(request, 'accounts/profile.html')
