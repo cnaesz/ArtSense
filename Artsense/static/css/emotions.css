@@ -1,0 +1,102 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f8f9fa;
+    color: #2c3e50;
+    text-align: center;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Responsive image: fits screen, no scroll */
+#artworkImage {
+    max-width: 90%;
+    max-height: 70vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    margin-bottom: 30px;
+}
+
+/* Input section (hidden at first) */
+#inputSection {
+    display: none;
+    width: 80%;
+    max-width: 500px;
+    margin: 10px auto 20px;
+}
+
+#emotionInput {
+    padding: 12px;
+    width: 70%;
+    border: 2px solid #ddd;
+    border-radius: 30px 0 0 30px;
+    outline: none;
+    font-size: 1em;
+    text-align: center;
+}
+
+#submitBtn {
+    padding: 12px 20px;
+    background: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 0 30px 30px 0;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+#submitBtn:hover {
+    background: #0069d9;
+}
+
+/* Success message */
+#confirmation {
+    display: none;
+    font-size: 1.5em;
+    color: #27ae60;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+/* Action buttons */
+#actionButtons {
+    display: none;
+    margin-top: 20px;
+}
+
+#actionButtons button {
+    margin: 0 10px;
+    padding: 12px 24px;
+    font-size: 1em;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+#actionButtons button:first-child {
+    background: #2ecc71;
+    color: white;
+}
+
+#actionButtons button:last-child {
+    background: #9b59b6;
+    color: white;
+}
+
+#actionButtons button:hover {
+    opacity: 0.9;
+    transform: scale(1.02);
+    transition: all 0.2s;
+}

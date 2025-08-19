@@ -1,0 +1,42 @@
+
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art & Emotion</title>
+    <link rel="stylesheet" href="{% static 'css/emotions.css' %}">
+</head>
+<body>
+
+    <!-- Artwork Image (always visible) -->
+    <img id="artworkImage" src="{{ artwork.image_url }}" alt="{{ artwork.title }}">
+
+    <!-- Input Section (appears after 5 seconds) -->
+    <div id="inputSection">
+        <input type="text" id="emotionInput" placeholder="How did this make you feel?" required>
+        <button id="submitBtn">Submit</button>
+    </div>
+
+    <!-- Success Message -->
+    <div id="confirmation">Success!</div>
+
+    <!-- Action Buttons (Next + Statics) -->
+    <div id="actionButtons">
+        <button onclick="location.reload()">Next</button>
+        <button onclick="location.href=''">Statics</button>
+    </div>
+
+    <!-- Load JavaScript at the end -->
+    <script src="{% static 'js/emotions.js' %}"></script>
+    <script>
+        // Pass Django data to JS
+        const artworkId = {{ artwork.met_id }};
+    </script>
+
+</body>
+</html>
+
