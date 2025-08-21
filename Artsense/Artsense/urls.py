@@ -17,8 +17,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+app_name = 'artsense'
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('img/', include('artworks.urls', namespace='artworks')),
+    path('', include('artworks.urls', namespace='artworks')),
     path('', include('accounts.urls', namespace='accounts')),
+    path('', include('emotions.urls', namespace='emotions')),
+    path('', include('home.urls', namespace='home')),
 ]

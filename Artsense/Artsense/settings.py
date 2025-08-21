@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'accounts',  # Custom app for user accounts
     'artworks',  # Custom app for artworks
     'emotions',  # Custom app for emotions
+    'home',  # Custom app for home page
 ]
 
 MIDDLEWARE = [
@@ -81,8 +82,9 @@ SITE_ID = 1
 #ACCOUNT_AUTHENTICATION_METHOD = 'email'
 #ACCOUNT_USER_MODEL_USERNAME_FIELD = None
 #ACCOUNT_USERNAME_REQUIRED = False
-#LOGIN_REDIRECT_URL = '/home/'  # Redirect after login
-#LOGOUT_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = 'artworks/showarts/'  # Redirect after login
+LOGIN_URL = 'account/login'  # URL for login
+LOGOUT_REDIRECT_URL = '/'
 ACCOUNT_FORMS = {
     'signup': 'users.forms.CustomSignupForm',
 }

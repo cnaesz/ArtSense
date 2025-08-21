@@ -2,9 +2,9 @@ from django.contrib import admin
 from django.urls import path, include
 from . import views
 
-app_name = 'artworks'
+app_name = 'home'
 
 urlpatterns = [
-    path('showarts/', views.show_artwork, name='showarts'),
+    path('', views.home, name='home'),
 
 ]
