@@ -18,3 +18,6 @@ class Response(models.Model):
         indexes = [
             models.Index(fields=['artwork', 'normalized_word']),
         ]
+    
+    def __str__(self):
+        return self.user.username + " - " + self.artwork.title + " - " + self.word

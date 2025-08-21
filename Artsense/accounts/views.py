@@ -24,7 +24,7 @@ def login_view(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            return redirect('showarts')
+            return redirect('/showarts')
         else:
             error = "Invalid username or password"
     return render(request, 'accounts/login.html', {'error': error})
