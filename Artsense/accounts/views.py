@@ -11,7 +11,7 @@ def signup_view(request):
             user = form.save()  # Saves user with hashed password
             # Auto-login after signup
             login(request, user)
-            return redirect('profile')  # Go to profile after signup
+            return redirect('/showarts')  # Go to profile after signup
     else:
         form = SignUpForm()
     return render(request, 'accounts/sign_up.html', {'form': form})
@@ -24,7 +24,7 @@ def login_view(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            return redirect('profile')
+            return redirect('showarts')
         else:
             error = "Invalid username or password"
     return render(request, 'accounts/login.html', {'error': error})

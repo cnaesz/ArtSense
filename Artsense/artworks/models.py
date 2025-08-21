@@ -2,6 +2,7 @@
 from django.db import models
 from django.conf import settings
 
+
 class Artwork(models.Model):
     met_id = models.CharField(max_length=200, blank=True, null=True) 
     object_number = models.CharField(max_length=50, unique=True, null=True)

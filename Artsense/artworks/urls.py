@@ -6,5 +6,5 @@ app_name = 'artworks'
 
 urlpatterns = [
     path('showarts/', views.show_artwork, name='showarts'),
-
+    path('',include('emotions.urls', namespace='emotions')),
 ]
