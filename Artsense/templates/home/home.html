@@ -1,1 +1,212 @@
-ps pssss
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Artsense • یک کلمه، یک احساس</title>
+
+  <!-- فونت فارسی زیبا -->
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600&family=Vazirmatn:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #e6eaf0;
+      color: #2a3444;
+      font-family: 'Vazirmatn', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      direction: rtl;
+    }
+
+    /* پس‌زمینه: موج رنگ ملایم */
+    .background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') no-repeat center center;
+      background-size: cover;
+      opacity: 0.25;
+      z-index: -2;
+    }
+
+    /* افکت موج رنگ ملایم (اختیاری، جایگزین عکس) */
+    .gradient-wave {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        135deg,
+        rgba(140, 170, 200, 0.2) 0%,
+        rgba(210, 220, 240, 0.3) 50%,
+        rgba(180, 200, 230, 0.25) 100%
+      );
+      z-index: -1;
+      animation: slowGradient 15s ease-in-out infinite alternate;
+    }
+
+    @keyframes slowGradient {
+      0% {
+        background-position: 0% 50%;
+        opacity: 0.6;
+      }
+      100% {
+        background-position: 100% 50%;
+        opacity: 0.8;
+      }
+    }
+
+    .container {
+      max-width: 800px;
+      text-align: center;
+      padding: 70px 40px;
+      background: rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(10px);
+      border-radius: 24px;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      z-index: 1;
+    }
+
+    h1 {
+      font-family: 'Lora', serif;
+      font-size: 3.2em;
+      color: #2c3a56;
+      margin-bottom: 24px;
+      font-weight: 600;
+      letter-spacing: -1px;
+      opacity: 0;
+      animation: float-up 1.4s ease-out forwards 0.5s;
+    }
+
+    .tagline {
+      font-family: 'Lora', serif;
+      font-size: 1.4em;
+      color: #5c6d7e;
+      font-style: italic;
+      margin-bottom: 32px;
+      opacity: 0;
+      animation: float-up 1.2s ease-out forwards 1.2s;
+    }
+
+    .prompt {
+      font-size: 1.35em;
+      color: #3a4a5f;
+      line-height: 1.9;
+      padding: 28px;
+      margin: 30px auto;
+      max-width: 700px;
+      border-radius: 16px;
+      background: rgba(90, 122, 154, 0.06);
+      border: 1px solid rgba(90, 122, 154, 0.12);
+      font-weight: 400;
+      opacity: 0;
+      animation: fade-in 2.5s ease-in-out forwards 2.0s;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 36px;
+      margin: 20px 14px;
+      border-radius: 32px;
+      text-decoration: none;
+      font-size: 1.1em;
+      font-weight: 500;
+      transition: all 0.4s ease;
+      opacity: 0;
+    }
+
+    .btn-primary {
+      background-color: #5a7a9a;
+      color: white;
+      border: 1px solid #5a7a9a;
+    }
+
+    .btn-primary:hover {
+      background-color: #46637f;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(70, 99, 127, 0.3);
+    }
+
+    .btn-outline {
+      color: #5a7a9a;
+      background: transparent;
+      border: 1px solid #5a7a9a;
+    }
+
+    .btn-outline:hover {
+      color: #46637f;
+      border-color: #46637f;
+      background: rgba(90, 122, 154, 0.08);
+    }
+
+    footer {
+      margin-top: 45px;
+      font-size: 0.95em;
+      color: #8892a2;
+      opacity: 0;
+      animation: float-up 1s ease-out forwards 4.0s;
+    }
+
+    /* انیمیشن‌ها */
+    @keyframes fade-in {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    @keyframes float-up {
+      0% {
+        opacity: 0;
+        transform: translateY(20px) scale(0.98);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- پس‌زمینه عکس هنری با شفافیت پایین -->
+  <div class="background"></div>
+
+  <!-- یا اگر نخوای عکس، این موج رنگ رو فعال کن (بالاتر از بک‌گراند، پایین‌تر از کانتینر) -->
+  <!-- <div class="gradient-wave"></div> -->
+
+  <div class="container">
+    <h1>Artsense</h1>
+    <div class="tagline">یک کلمه. یک اثر هنری. یک لحظه احساس.</div>
+
+    <div class="prompt">
+      هر تصویری که می‌بینید، لطفاً احساس خودتون رو با فقط یک کلمه بیان کنید. نه بیشتر، نه کمتر. فقط یک کلمه از لحظهٔ اول.
+    </div>
+
+    <div id="buttons">
+      {% if user.is_authenticated %}
+        <a href="" class="btn btn-primary" style="animation: float-up 1s ease-out forwards 3.5s;">رفتن به داشبورد</a>
+      {% else %}
+        <a href="" class="btn btn-primary" style="animation: float-up 1s ease-out forwards 3.5s;">ورود</a>
+        <a href="" class="btn btn-outline" style="animation: float-up 1s ease-out forwards 3.8s;">ثبت‌نام آرام</a>
+      {% endif %}
+    </div>
+
+    <footer>
+      ابزاری ملایم برای تحقیق، تفکر، و پاسخ به هنر.
+    </footer>
+  </div>
+
+</body>
+</html>

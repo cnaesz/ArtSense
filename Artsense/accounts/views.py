@@ -3,6 +3,8 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate
 from .forms import SignUpForm
+from emotions.models import Response
+from artworks.models import Artwork
 
 def signup_view(request):
     if request.method == 'POST':
@@ -29,5 +31,14 @@ def login_view(request):
             error = "Invalid username or password"
     return render(request, 'accounts/login.html', {'error': error})
 
-def profile_view(request):
-    return render(request, 'accounts/profile.html')
+
+
+def dashboard_view(request):
+    amar = Response.objects.all()
+    asar = Response.objects.select_related('artwork').all()
+    context = {
+        'amar': amar,
+        'asar': asar,
+    }
+
+    return render(request, 'accounts/dashboard.html', context)
